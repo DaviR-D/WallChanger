@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.38.1 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkWindow">
+  <object class="GtkWindow" id="window">
     <property name="can-focus">False</property>
     <property name="default-width">200</property>
     <property name="default-height">200</property>
@@ -28,10 +28,10 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch">
+              <object class="GtkSwitch" id="switch">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <signal name="activate" handler="onSwitchActive" swapped="no"/>
+                <signal name="state-set" handler="onSwitch" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -58,11 +58,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkFileChooserButton">
+          <object class="GtkFileChooserButton" id="chooser">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="action">select-folder</property>
             <property name="title" translatable="yes">Select your wallpapers folder</property>
+            <signal name="file-set" handler="onFolderSet" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -71,7 +72,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="start">
+          <object class="GtkButton" id="button">
             <property name="label" translatable="yes">Start</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
