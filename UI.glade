@@ -4,8 +4,8 @@
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="window">
     <property name="can-focus">False</property>
-    <property name="default-width">200</property>
-    <property name="default-height">200</property>
+    <property name="default-width">330</property>
+    <property name="default-height">230</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -63,12 +63,28 @@
             <property name="can-focus">False</property>
             <property name="action">select-folder</property>
             <property name="title" translatable="yes">Select your wallpapers folder</property>
-            <signal name="file-set" handler="onFolderSet" swapped="no"/>
+            <signal name="file-set" handler="setFolder" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
+            <property name="padding">10</property>
             <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="cd_entry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="placeholder-text" translatable="yes">Countdown in seconds (press enter after typing)</property>
+            <property name="input-purpose">number</property>
+            <signal name="activate" handler="setCD" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">10</property>
+            <property name="position">4</property>
           </packing>
         </child>
         <child>
@@ -83,7 +99,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">False</property>
-            <property name="position">3</property>
+            <property name="position">5</property>
           </packing>
         </child>
       </object>
