@@ -11,7 +11,13 @@ with open("wallchanger.config") as conf:
 
 wallpaper_list = glob.glob(config['folder'] + '/*') # Wallpaper folder
 current_wallpaper = subprocess.check_output("gsettings get org.gnome.desktop.background picture-uri", shell=True, universal_newlines=True)[8:-2]
-index = wallpaper_list.index(current_wallpaper)
+
+try:
+	index = wallpaper_list.index(current_wallpaper)
+except ValueError as e:
+	index = 0
+
+
 countdown = config['countdown']
 
 while True:
