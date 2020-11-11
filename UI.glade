@@ -4,13 +4,59 @@
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="window">
     <property name="can-focus">False</property>
-    <property name="default-width">330</property>
+    <property name="default-width">380</property>
     <property name="default-height">230</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Wallpapers folder:</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFileChooserButton" id="chooser">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
+            <property name="action">select-folder</property>
+            <property name="title" translatable="yes">Select your wallpapers folder</property>
+            <signal name="file-set" handler="setFolder" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">10</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="cd_entry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
+            <property name="placeholder-text" translatable="yes">Countdown in seconds (press enter after typing)</property>
+            <property name="input-purpose">number</property>
+            <signal name="activate" handler="setCD" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">10</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
         <child>
           <!-- n-columns=2 n-rows=1 -->
           <object class="GtkGrid">
@@ -42,49 +88,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Wallpapers folder:</property>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkFileChooserButton" id="chooser">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="action">select-folder</property>
-            <property name="title" translatable="yes">Select your wallpapers folder</property>
-            <signal name="file-set" handler="setFolder" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="padding">10</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkEntry" id="cd_entry">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="placeholder-text" translatable="yes">Countdown in seconds (press enter after typing)</property>
-            <property name="input-purpose">number</property>
-            <signal name="activate" handler="setCD" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="padding">10</property>
-            <property name="position">4</property>
+            <property name="position">3</property>
           </packing>
         </child>
         <child>
@@ -94,6 +98,8 @@
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
             <property name="tooltip-text" translatable="yes">Start WallChanger</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
             <signal name="clicked" handler="Start" swapped="no"/>
           </object>
           <packing>
