@@ -4,6 +4,7 @@
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="window">
     <property name="can-focus">False</property>
+    <property name="resizable">False</property>
     <property name="default-width">380</property>
     <property name="default-height">230</property>
     <child>
