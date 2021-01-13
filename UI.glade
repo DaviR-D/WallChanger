@@ -6,7 +6,7 @@
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <property name="default-width">380</property>
-    <property name="default-height">230</property>
+    <property name="default-height">250</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -67,6 +67,8 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="margin-top">15</property>
+                <property name="margin-bottom">10</property>
                 <property name="label" translatable="yes">Run on login</property>
               </object>
               <packing>
@@ -78,6 +80,10 @@
               <object class="GtkSwitch" id="switch">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
+                <property name="margin-start">20</property>
+                <property name="margin-end">10</property>
+                <property name="margin-top">15</property>
+                <property name="margin-bottom">10</property>
                 <signal name="state-set" handler="onSwitch" swapped="no"/>
               </object>
               <packing>
@@ -106,7 +112,7 @@
           <packing>
             <property name="expand">True</property>
             <property name="fill">False</property>
-            <property name="position">5</property>
+            <property name="position">3</property>
           </packing>
         </child>
       </object>
