@@ -24,6 +24,6 @@ countdown = config['countdown']
 
 while True:
 	for wallpaper in wallpaper_list[index::]:
-		settings['picture-url'] = 'file://' + wallpaper
-		time.sleep(50) # Time for changing the wallpaper
+		settings['picture-uri'] = 'file://' + wallpaper
+		time.sleep(int(config['countdown'])) # Time for changing the wallpaper
 	index = 0
