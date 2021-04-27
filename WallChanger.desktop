@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=GNOME;GTK;Utility;
+Comment[pt_BR]=
+Comment=
+Exec=python3 /usr/share/WallChanger/main.py
+GenericName[pt_BR]=WallChanger
+GenericName=WallChanger
+Icon=
+Name=WallChanger
+Path=/usr/share/WallChanger
+Type=Application
+
