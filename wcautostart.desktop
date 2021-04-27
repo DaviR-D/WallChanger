@@ -2,9 +2,10 @@
 Categories=GNOME;GTK;Utility;
 Comment[pt_BR]=
 Comment=
-Exec=python3 main.py
+Exec=python3 init.py
 GenericName[pt_BR]=WallChanger
 GenericName=WallChanger
 Icon=
 Name=WallChanger
 Type=Application
+X-GNOME-Autostart-enabled=true
