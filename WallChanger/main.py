@@ -4,6 +4,7 @@ from gi.repository import Gtk
 import subprocess
 import json
 import os
+from time import sleep
 
 class WallChanger(Gtk.Window):
 	def __init__(self):
@@ -35,7 +36,7 @@ class WallChanger(Gtk.Window):
 	def Start(self, data):
 		subprocess.run('python3 wallchanger.py &', shell=True)
 
-	def setCD(self, data):
+	def setCD(self, data, bt):
 		self.conf['countdown'] = self.cd_entry.get_text()
 		with open("wallchanger.config", 'w') as config:
 			json.dump(self.conf, config)

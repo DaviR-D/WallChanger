@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.1 -->
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkWindow" id="window">
@@ -47,9 +47,9 @@
             <property name="can-focus">True</property>
             <property name="margin-start">20</property>
             <property name="margin-end">20</property>
-            <property name="placeholder-text" translatable="yes">Countdown in seconds (press enter after typing)</property>
+            <property name="placeholder-text" translatable="yes">Countdown in seconds</property>
             <property name="input-purpose">number</property>
-            <signal name="activate" handler="setCD" swapped="no"/>
+            <signal name="key-release-event" handler="setCD" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
